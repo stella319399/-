@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>長灘島 6D5N 完整旅遊行程與完整店家資料庫</title>
+  <style>
+    :root {
+      --primary-color: #0e7490;
+      --secondary-color: #06b6d4;
+      --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #e0f7fa 100%);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --card-border: rgba(255, 255, 255, 0.6);
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem 1.8rem;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 10px 25px -5px rgba(14, 116, 144, 0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 1.2rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2px solid var(--secondary-color);
+      color: var(--primary-color);
+      padding: 0.6rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+      box-shadow: 0 4px 12px rgba(14, 116, 144, 0.3);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .day-title {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      margin: 0 0 0.8rem 0;
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 0.4rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .grid-item {
+      background: #ffffff;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .grid-item h4 {
+      margin: 0 0 0.4rem 0;
+      color: var(--primary-color);
+      font-size: 1.05rem;
+    }
+
+    .grid-item p {
+      margin: 0 0 0.5rem 0;
+      font-size: 0.88rem;
+      color: #475569;
+    }
+
+    a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🏝️ 長灘島 6 天 5 夜自由行完整指南</h1>
+    <p>📅 9/22 - 9/27 專屬完整筆記 (Hegan Villa View / One Hagdan Villas)</p>
+  </header>
+
+  <div class="container">
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('itinerary-tab', this)">🗓️ 每日詳細行程</button>
+      <button class="tab-btn" onclick="switchTab('notes-tab', this)">⚠️ 出發行前準備</button>
+      <button class="tab-btn" onclick="switchTab('food-tab', this)">🍽️ 餐廳與甜點 (30)</button>
+      <button class="tab-btn" onclick="switchTab('spa-tab', this)">💆 SPA 按摩 (13)</button>
+      <button class="tab-btn" onclick="switchTab('bar-tab', this)">🍸 酒吧夜生活 (7)</button>
+    </div>
+
+    <!-- TAB 1: 每日行程 -->
+    <div id="itinerary-tab" class="tab-content active">
+      <div class="card">
+        <h3 class="day-title">📍 Day 1 (9/22)：抵達長灘島、換錢與入住採買</h3>
+        <ul>
+          <li><b>交通抵達：</b>抵達卡利博 (KLO) 或卡提克蘭 (MPH) 機場 ➔ 搭車搭船前往長灘島。</li>
+          <li><b>Villa Check-in：</b>入住 Hegan Villa View 或 One Hagdan Villas[cite: 1, 2]。</li>
+          <li><b>市區辦理：</b>至 D'Mall 換匯（持美金百元鈔）、確認 eSIM / Klook 網路卡連線[cite: 1, 2]。</li>
+          <li><b>採買休息：</b>超市採買民生用品與飲品 ➔ 享用迎賓晚餐，回 Villa 休息[cite: 1, 2]。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="day-title">📍 Day 2 (9/23)：高空拖曳傘與私人遊艇夕陽派對</h3>
+        <ul>
+          <li><b>水上活動：</b>體驗高空拖曳傘 (Parasailing)，空中俯瞰長灘島絕景[cite: 1, 2]。</li>
+          <li><b>島嶼探訪：</b>私人島嶼探訪或香蕉船/水上活動體驗[cite: 1, 2]。</li>
+          <li><b>傍晚重頭戲：</b>長灘島私人遊艇夕陽派對 (Yacht Party)，享受海上音樂與夕陽[cite: 1, 2]。</li>
+          <li><b>晚間行程：</b>海灘特色晚餐 ➔ 預約夜間 SPA 按摩放鬆[cite: 1, 2]。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="day-title">📍 Day 3 (9/24)：S1 & S2 沙灘巡禮與酒吧狂歡</h3>
+        <ul>
+          <li><b>景點打卡：</b>S1 聖母岩礁 (Willy's Rock)、Puka Beach 或 Lambros Point 打卡[cite: 1, 2]。</li>
+          <li><b>下午茶甜點：</b>品嚐 HaloMango、Coco Mama 芒果冰或 Ice Flakes 雪花冰[cite: 1, 2]。</li>
+          <li><b>購物採買：</b>D'Mall 伴手禮與紀念品採買[cite: 1, 2]。</li>
+          <li><b>夜生活狂歡：</b>夜間走訪 Mai Tai Bar、Summer Place 或 Club Galaxy 體驗派對[cite: 1, 2]。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="day-title">📍 Day 4 (9/25)：Villa 放鬆與火山熱石 SPA 深層舒壓</h3>
+        <ul>
+          <li><b>Villa 休閒：</b>私人泳池悠閒早晨、拍照放鬆[cite: 1, 2]。</li>
+          <li><b>午餐美饌：</b>體驗在地炭烤（如 I Love BBQ 或 Mang Inasal）[cite: 1, 2]。</li>
+          <li><b>深層舒壓：</b>預約 Lava Stone Spa (火山熱石) 或 Mandala SPA 放鬆肌膚[cite: 1, 2]。</li>
+          <li><b>晚餐享受：</b>S2 白沙灘海景餐酒館晚餐[cite: 1, 2]。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="day-title">📍 Day 5 (9/26)：風帆船夕陽巡航與 Henann 奢華晚餐</h3>
+        <ul>
+          <li><b>漫步拍照：</b>白沙灘漫步與海景咖啡廳巡禮[cite: 1, 2]。</li>
+          <li><b>傍晚巡航：</b>搭乘傳統風帆船 (Paraw Sailing) 觀賞長灘島夕陽[cite: 1, 2]。</li>
+          <li><b>壓軸晚餐：</b>Henann Regency 等高級飯店奢華自助晚餐[cite: 1, 2]。</li>
+          <li><b>告別之夜：</b>夜巡沙灘酒吧，享受長灘島最後一夜[cite: 1, 2]。</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="day-title">📍 Day 6 (9/27)：退房與返程</h3>
+        <ul>
+          <li><b>辦理退房：</b>Villa 辦理退房，整理行李[cite: 1, 2]。</li>
+          <li><b>搭機返台：</b>前往碼頭搭船至機場，搭機返家[cite: 1, 2]。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 2: 行前準備 -->
+    <div id="notes-tab" class="tab-content">
+      <div class="card">
+        <h3 class="day-title">⚠️ 出發行前注意事項與必備清單</h3>
+        <ul>
+          <li><b>e-Travel 填寫：</b>登機前 72 小時內完成菲律賓 e-Travel 線上填報並存 QR Code[cite: 1, 2]。</li>
+          <li><b>美金兌換：</b>備妥「新版美金百元鈔」至長灘島當地兌換比索 (PHP)，匯率最佳[cite: 1, 2]。</li>
+          <li><b>沙灘法規：</b>白沙灘嚴禁吸菸、飲酒、飲食及亂丟垃圾，違者高額罰款[cite: 1, 2]。</li>
+          <li><b>網路連線：</b>提前準備 eSIM 或 Klook 網卡，確保全程通訊順暢[cite: 1, 2]。</li>
+          <li><b>隨身必備：</b>護照、轉接頭、海洋友善防曬乳與防水袋[cite: 1, 2]。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 3: 餐廳與甜點 (30家) -->
+    <div id="food-tab" class="tab-content">
+      <div class="grid-container">
+        <div class="grid-item"><div><h4>1. Aria Cucina Italiana</h4><p>S2 白沙灘熱門義式餐館，必點手工披薩[cite: 1, 2]。</p></div><a href="https://missslow.com/aria-boracay/" target="_blank">🔗 食記資訊</a></div>
+        <div class="grid-item"><div><h4>2. Epic Boracay</h4><p>S2 地標沙灘餐酒館，美食與海景兼具[cite: 1, 2]。</p></div><a href="https://elsablog.com/%E9%95%B7%E7%81%98%E5%B3%B6%E7%BE%8E%E9%A3%9Fepic-boracay-%EF%BD%9Cepic-s2%E6%9C%80%E7%81%AB%E7%86%B1%E9%A4%90%E5%BB%B3%E5%A4%9C%E7%94%9F%E6%B4%BDdisco/" target="_blank">🔗 食記資訊</a></div>
+        <div class="grid-item"><div><h4>3. I Love BBQ</h4><p>D'Mall 內人氣炭烤肋排與燒烤名店[cite: 1, 2]。</p></div><a href="https://missslow.com/i-love-bbq-boracay/" target="_blank">🔗 食記資訊</a></div>
+        <div class="grid-item"><div><h4>4. Nameet Bar and Restaurant</h4><p>S1 區氣氛極佳的特色海景餐酒館[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Nameet+Bar+and+Restaurant+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>5. Red Apol</h4><p>S1 區域特色在地風味料理[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Red+Apol+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>6. Gerry's Grill</h4><p>傳統菲式連鎖餐館，烤魷魚與 Sisig 必點[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Gerry's+Grill+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>7. Andok's</h4><p>平價美味的在地連鎖烤雞與炸雞店[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Andok's+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>8. Mang Inasal</h4><p>菲式平價烤雞腿飯，經典醬汁拌飯[cite: 1, 2]。</p></div><a href="https://www.sweet-dumpling.com/doc/2e20747e542a7ef1cc8498225844e993" target="_blank">🔗 食記資訊</a></div>
+        <div class="grid-item"><div><h4>9. Jollibee (快樂蜂)</h4><p>菲律賓國民速食，炸雞配義大利麵[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Jollibee+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>10. Island Chicken Inasal</h4><p>在地傳統醃製烤雞專賣店[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Island+Chicken+Inasal+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>11. The Sunny Side Cafe</h4><p>S1 高評價海景早午餐，鬆餅與咖啡熱門[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=The+Sunny+Side+Cafe+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>12. Smooth Cafe</h4><p>質感咖啡廳，提供優質咖啡與輕食[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Smooth+Cafe+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>13. RedCrab</h4><p>螃蟹海鮮專賣店，招牌螃蟹料理[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=RedCrab+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>14. Smoke Resto</h4><p>D'Mall 平價菲式餐館，牛骨湯 (Bulalo) 必喝[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Smoke+Resto+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>15. Congas Bar & Resto</h4><p>拉丁與特色風味餐館，餐點獨特[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Congas+Bar+and+Resto+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>16. 7cups</h4><p>在地熱門手搖飲與輕食小店[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=7cups+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>17. Potato Corner</h4><p>超人氣現炸風味搖搖薯條[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Potato+Corner+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>18. Alexi's Eatery</h4><p>在地平價傳統食堂，體驗在地風味[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Alexi's+Eatery+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>19. Momo Ramen</h4><p>日式拉麵專賣店，提供熱騰騰湯麵[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=momo+ramen+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>20. Dos Mestizos</h4><p>長灘島經典西班牙料理，海鮮燉飯必點。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Dos+Mestizos+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>21. Subo Boracay</h4><p>高質感傳統菲式精緻料理。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Subo+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>22. Meze Wrap</h4><p>中東與地中海風格烤肉捲餅。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Meze+Wrap+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>23. Nonie's</h4><p>主打健康在地食材的特色料理。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Nonie's+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>24. Cha Cha's Beach Cafe</h4><p>S2 海灘景觀餐廳，氛圍歡樂餐點優良。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Cha+Cha's+Beach+Cafe+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>25. HaloMango</h4><p>排隊芒果冰淇淋與芒果冰品名店[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=HaloMango+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>26. Coco Mama</h4><p>網美必吃椰子碗芒果冰淇淋[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Coco+Mama+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>27. Ice Flakes</h4><p>綿密雪花冰，多種水果口味消暑首選[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Ice+Flakes+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>28. Jonah's Fruit Shake</h4><p>老牌芒果冰沙名店，濃郁經典[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Jonah's+Fruit+Shake+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>29. Real Coffee & Tea Cafe</h4><p>長灘島經典老字號，招牌 Calamansi Muffin。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Real+Coffee+and+Tea+Cafe+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>30. Fruitas Shake</h4><p>平價現打新鮮水果冰沙。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Fruitas+Shake+Boracay" target="_blank">📍 地圖搜尋</a></div>
+      </div>
+    </div>
+
+    <!-- TAB 4: SPA 按摩 (13家) -->
+    <div id="spa-tab" class="tab-content">
+      <div class="grid-container">
+        <div class="grid-item"><div><h4>1. Eurotel SPA</h4><p>24 小時營業，便利首選[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Eurotel+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>2. Upperhouse Spa</h4><p>位於 The District 飯店內，技術優良[cite: 1, 2]。</p></div><a href="https://goo.gl/maps/Jcv6TUytxobXuZZy5" target="_blank">📍 地圖連結</a></div>
+        <div class="grid-item"><div><h4>3. Bella Isa Spa</h4><p>臨海高評價獨立 SPA[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Bella+Isa+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>4. Tides Hotel SPA (Surrender)</h4><p>位於 D'Mall 內 Tides Hotel 頂樓[cite: 1, 2]。</p></div><a href="https://goo.gl/maps/Uabh4mBJADKigLBd9" target="_blank">📍 地圖連結</a></div>
+        <div class="grid-item"><div><h4>5. Lava Stone Spa (火山熱石)</h4><p>經典熱石舒壓按摩[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Lava+Stone+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>6. Mandala SPA</h4><p>頂級花園 SPA，極致療癒[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Mandala+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>7. See Won SPA</h4><p>知名韓式 SPA 按摩館[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=See+Won+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>8. Tirta Spa</h4><p>奢華山景獨立 Villa SPA。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Tirta+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>9. Helios Spa</h4><p>熱門蜂蜜與椰子精油按摩。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Helios+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>10. Poseidon Spa</h4><p>帝王般獨立泳池 Villa SPA 體驗。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Poseidon+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>11. Palassa Spa</h4><p>平價平實的海灘邊按摩服務。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Palassa+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>12. Boracay Breeze Spa</h4><p>舒適平價全身放鬆按摩。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Boracay+Breeze+Spa" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>13. Oasis Spa</h4><p>寧靜放鬆的精油舒壓體驗。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Oasis+Spa+Boracay" target="_blank">📍 地圖搜尋</a></div>
+      </div>
+    </div>
+
+    <!-- TAB 5: 酒吧夜生活 (7家) -->
+    <div id="bar-tab" class="tab-content">
+      <div class="grid-container">
+        <div class="grid-item"><div><h4>1. Mai Tai Bar (S1)</h4><p>熱帶風格調酒，夕陽景觀絕佳[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Mai+Tai+Bar+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>2. Paraw Beach Club (S1)</h4><p>臨海沙灘酒吧，看夕陽喝調酒首選[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Paraw+Beach+Club+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>3. Epic Boracay (S2)</h4><p>夜間熱門沙灘音樂派對酒吧[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Epic+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>4. Summer Place (S2)</h4><p>老牌經典海灘 Nightclub，舞池氣氛熱烈[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Summer+Place+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>5. Exit Bar (S2)</h4><p>特色隨性獨立酒吧，背包客最愛[cite: 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Exit+Bar+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>6. Club Galaxy</h4><p>長灘島大型室內電音 Nightclub[cite: 1, 2]。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Club+Galaxy+Boracay" target="_blank">📍 地圖搜尋</a></div>
+        <div class="grid-item"><div><h4>7. Om Bar Boracay</h4><p>S2 白沙灘邊音樂調酒酒吧。</p></div><a href="https://www.google.com/maps/search/?api=1&query=Om+Bar+Boracay" target="_blank">📍 地圖搜尋</a></div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Boracay Travel Guide — Verified 30 Foods, 13 Spas, 7 Bars</p>
+  </footer>
+
+  <script>
+    function switchTab(tabId, btnElement) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      btnElement.classList.add('active');
+    }
+  </script>
+</body>
+</html>
